@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plain components renders Item 1`] = `
+<div>
+  <figure
+    class="item"
+  >
+    <img
+      alt="loading"
+      src="image"
+    />
+    <h2
+      role="h2"
+    >
+      title
+    </h2>
+    <h3
+      role="h3"
+    >
+      category
+    </h3>
+    <p
+      role="p"
+    >
+      description
+    </p>
+  </figure>
+</div>
+`;
+
+exports[`Plain components renders an item in an item list 1`] = `
+<div>
+  <section
+    class="item-list"
+  >
+    <p
+      class="item-list-title"
+    >
+      We found 
+      1
+       items.
+    </p>
+  </section>
+</div>
+`;
+
+exports[`Plain components renders category list 1`] = `
+<div>
+  <section
+    class="category-list"
+  >
+    <figure>
+      <img
+        alt="loading"
+        src="category"
+      />
+      <h2>
+         Category 
+      </h2>
+    </figure>
+    <figure>
+      <img
+        alt="loading"
+        src="category"
+      />
+      <h2>
+         Category 
+      </h2>
+    </figure>
+    <figure>
+      <img
+        alt="loading"
+        src="category"
+      />
+      <h2>
+         Category 
+      </h2>
+    </figure>
+  </section>
+</div>
+`;
+
+exports[`Plain components renders the navbar 1`] = `
+<div>
+  <section
+    class="navbar"
+  >
+    <article
+      class="navbar-buttons"
+    >
+      <button>
+        Home
+      </button>
+      <button>
+        Cart
+      </button>
+    </article>
+    <section
+      class="search-bar"
+    />
+  </section>
+</div>
+`;
+
+exports[`Plain components renders the searchbar 1`] = `
+<div>
+  <section
+    class="search-bar"
+  />
+</div>
+`;
