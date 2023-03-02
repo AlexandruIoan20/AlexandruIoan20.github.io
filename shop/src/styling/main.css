@@ -1,5 +1,27 @@
-* { 
-    padding: 0; 
-    margin: 0; 
-    box-sizing: border-box;
+.home { 
+    display: grid; 
+    place-content: center;
+}
+
+.home h1 { 
+    font-size: 4rem;
+    color: #2B2D42;
+    font-weight: 800;
+}
+
+.home section { 
+    text-align: center;
+}
+
+.start-button {
+    border: none; 
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: #2B2D42;
+    color: #EDF2F4;
+}
+
+.start-button:hover { 
+    cursor: pointer;
+    text-decoration: underline;
 }

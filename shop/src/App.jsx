@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import ItemList from "./components/ItemList";
 import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
+import './styling/nav.css';
 import './styling/main.css';
 import { Routes, Route } from "react-router-dom";
 

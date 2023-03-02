@@ -25,7 +25,7 @@ const NavBar = () => {
                 </ul>
             </nav>
         <SearchBar />
-        </section>
+    </section>
     )
 };
 
