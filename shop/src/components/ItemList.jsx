@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "./item";
+import ItemListElement from "./ItemListElement";
 
 const ItemList = () => { 
     const items = [
@@ -12,7 +12,7 @@ const ItemList = () => {
         <section className="item-list">
             <p className="item-list-title">We found {`${items.length}`} items.</p>
             {items.map(item => { 
-                <Item key = {item.id}/>
+                return <ItemListElement key = {item.id}/>
             })}
         </section>
     )
