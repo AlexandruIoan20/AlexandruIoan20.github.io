@@ -15,7 +15,7 @@ const Cart = () => {
     return (
         <section className="cart">
             {elements.map(element => { 
-                return <CartElement/>
+                return <CartElement />
             })}
         </section>
     )

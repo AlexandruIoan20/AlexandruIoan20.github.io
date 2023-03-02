@@ -5,7 +5,7 @@ import Item from "../components/Item";
 import ItemList from "../components/ItemList"
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
-import CategoryList from "../components/CategotyList";
+import CategoryList from "../components/CategoryList";
 import ItemListElement from "../components/ItemListElement";
 import Cart from "../components/Cart";
 import CartElement from "../components/CartElement";
