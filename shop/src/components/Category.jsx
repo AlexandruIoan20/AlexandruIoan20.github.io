@@ -1,10 +1,11 @@
 import React from "react";
 
-const Category = () => { 
+const Category = (props) => { 
+    const { category } = props;
     return ( 
-        <figure>
-            <img src="category" alt="loading" />
-            <h2> Category </h2>
+        <figure className="category-element">
+            <img src= { category.url } width = "200px" height = "300px" alt="loading" />
+            <h2 className="category-name"> { category.name } </h2>
         </figure>
     )
 };
