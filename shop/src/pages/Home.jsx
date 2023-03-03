@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Home = () => { 
     return( 
         <section className="page home">
             <section>
                 <h1>Home Page</h1>
-                <button className="start-button">Shop Now</button>
+                <button className="start-button">
+                    <NavLink to = "/categories">Shop Now</NavLink></button>
             </section>
         </section>
     )

@@ -1,23 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import useCategories from "./Hooks/UseCategories";
 import Category from "./Category";
 import ItemList from "./ItemList";
 import { NavLink, Routes, Route } from "react-router-dom";
 
 const CategoryList = () => { 
-    const categories = [ 
-        {
-            name: "Sports",
-            id: "sports"
-        },
-        {
-            name: "Clothes",
-            id: "clothes"
-        },
-        {
-            name: "TEC", 
-            id: "tec"
-        }
-    ]
+    const [categories, setCategories ] = useState([]);
+    let arrayToSet = [];
+    arrayToSet = useCategories(arrayToSet);
+
     return(
         <section className="category-list">
             {categories.map(category => { 
