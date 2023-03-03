@@ -23,14 +23,15 @@ async function getState ( getStateArray ) {
 const useCategories = (finalArray) => { 
     useEffect ( () => { 
         async function createCategories () { 
-            let catState = [];
-            await getState(catState).then(arr => {
-                console.log(catState);
+            let catState = [], finalState = [];
+            await getState(catState).then(() => {
                 for(let i = 0; i < CATEGORIES.length; i++) {
-                    catState.push( { name: CATEGORIES[i].view, query:CATEGORIES[i].use, id: CATEGORIES[i].use});
-                    finalArray = catState;
+                    finalState.push( { name: CATEGORIES[i].view, query:CATEGORIES[i].use, id: CATEGORIES[i].use, url: catState[i]});
                 }
-            }).then(arr => console.log(finalArray));
+            }).then(() => { 
+                finalArray = finalState; 
+                console.log(finalArray)
+            });
         }
         createCategories();
     }, []);
