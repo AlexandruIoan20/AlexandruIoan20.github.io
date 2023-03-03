@@ -1,0 +1,31 @@
+.home { 
+    display: grid; 
+    place-content: center;
+}
+
+.home h1 { 
+    font-size: 4rem;
+    color: #2B2D42;
+    font-weight: 800;
+}
+
+.home section { 
+    text-align: center;
+}
+
+.start-button {
+    border: none; 
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: #2B2D42;
+    color: #EDF2F4;
+
+    font-size: 2rem;
+}
+
+.start-button:hover { 
+    cursor: pointer;
+    font-size: 2.1rem;
+    background-color: #EF233C;
+    color: #EDF2F4;
+}

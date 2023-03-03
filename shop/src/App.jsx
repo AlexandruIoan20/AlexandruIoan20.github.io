@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import './styling/nav.css';
 import './styling/main.css';
+import './styling/intro.css';
+import './styling/categories.css';
 import { Routes, Route } from "react-router-dom";
 
 
