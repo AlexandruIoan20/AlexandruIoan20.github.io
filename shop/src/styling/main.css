@@ -3,3 +3,17 @@
     margin: 0; 
     box-sizing: border-box;
 }
+
+.page h1 { 
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: bolder;  
+  color: #2B2D42;
+
+  padding: 1rem;
+  background-color: #EDF2F4;
+}
+
+.home h1 { 
+    background-color: white;
+}
