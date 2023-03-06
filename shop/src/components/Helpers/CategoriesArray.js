@@ -13,7 +13,7 @@ const CATEGORIES = [
   },
   {
     view: 'Books',
-    use: 'book',
+    use: 'books',
   },
 ];
 

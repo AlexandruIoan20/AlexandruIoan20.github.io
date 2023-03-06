@@ -12,6 +12,7 @@ import './styling/main.css';
 import './styling/intro.css';
 import './styling/categories.css';
 import { Routes, Route } from "react-router-dom";
+import ItemListElement from "./components/ItemListElement";
 
 
 const App = () => { 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/" element = { <Home/>} />
         <Route path="/categories" element = {<Categories />} />
         <Route path ='/categories/:id' element = { <ItemList />} />
+        <Route path ='/categories/:id/:el' element = { <ItemListElement />} />
         <Route path="/contact" element = { <Contact />} /> 
         <Route path="/about" element = { <About />} /> 
         <Route path="/cart" element = { <Cart />}/>

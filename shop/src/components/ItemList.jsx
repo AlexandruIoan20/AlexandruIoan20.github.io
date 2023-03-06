@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ItemListElement from "./ItemListElement";
-import { NavLink } from 'react-router-dom';
-import { useOutletContext, useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import  { createApi } from 'unsplash-js';
+import { NavLink } from "react-router-dom";
+import ITEMS from "./Helpers/items";
 
 
 const unsplash = createApi({
@@ -14,6 +15,14 @@ const ItemList = () => {
     const [items, setItems] = useState([]);
     
     async function buildItemList () { 
+        let list = {};
+
+        for(let i = 0; i < ITEMS.length; i++) {
+            if(ITEMS[i].category === urlID.id) { 
+                list = ITEMS[i].list
+            }
+        }
+        console.log(list);
         let fetchedElements = [];
         await unsplash.search.getPhotos({ 
             query: urlID.id,
@@ -21,21 +30,21 @@ const ItemList = () => {
             perPage: 10,
             orientation: 'portrait',
         }).then(arr => { 
-            console.log(arr)
             for(let i = 0; i < 6; i++) { 
                 fetchedElements[i] = { 
+                    name: list[i].name, 
+                    price: list[i].price,
                     url: arr.response.results[i].urls.small_s3,
                     id: arr.response.results[i].blur_hash,
                 }
             };
         }).then( () => { 
-            setItems(fetchedElements)
-        }).then( () => { 
+            setItems(fetchedElements);
             console.log(items)
         })
     }
 
-    useEffect( () => {
+    useEffect( () => { 
         buildItemList();
      }, [])
 
@@ -44,9 +53,11 @@ const ItemList = () => {
             <p className="item-list-title">We found {`${items.length}`} items.</p>
             {items.map(item => { 
                 return ( 
-                    <article key = {item.id}>
-                        <img src={ item.url } alt="loading..." />
-                    </article>
+                    <NavLink key = { item.id} to = {`/categories/${urlID.id}/${item.name}`}>
+                        <article>
+                            <img src={ item.url } alt="loading..." />
+                        </article>
+                    </NavLink>
                 )
             })} 
             <h1>In Test ItemListElement </h1> 
