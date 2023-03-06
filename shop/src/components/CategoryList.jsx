@@ -25,7 +25,7 @@ async function getState ( getStateArray ) {
 }
 
 const CategoryList = () => { 
-    const [categories, setCategories ] = useState ([]);
+    const [categories, setCategories] = useState ([]);
 
     async function createCategories () { 
         let catState = [], array = [];

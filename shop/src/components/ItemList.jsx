@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ItemListElement from "./ItemListElement";
-import { useParams} from "react-router-dom";
+import Item from "./Item";
+import { useParams, Routes, Route, Outlet, useOutletContext } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 import { NavLink } from "react-router-dom";
 import ITEMS from "./Helpers/items";
@@ -22,7 +22,6 @@ const ItemList = () => {
                 list = ITEMS[i].list
             }
         }
-        console.log(list);
         let fetchedElements = [];
         await unsplash.search.getPhotos({ 
             query: urlID.id,
@@ -40,7 +39,6 @@ const ItemList = () => {
             };
         }).then( () => { 
             setItems(fetchedElements);
-            console.log(items)
         })
     }
 
@@ -53,17 +51,20 @@ const ItemList = () => {
             <p className="item-list-title">We found {`${items.length}`} items.</p>
             {items.map(item => { 
                 return ( 
-                    <NavLink key = { item.id} to = {`/categories/${urlID.id}/${item.name}`}>
+                    <NavLink key = { item.id} to = {`/categories/${urlID.id}/${item.id}`}>
                         <article>
                             <img src={ item.url } alt="loading..." />
                         </article>
                     </NavLink>
                 )
             })} 
-            <h1>In Test ItemListElement </h1> 
         </section> )
 
     
 };
 
 export default ItemList;
+
+export function useItem(){ 
+    useOutletContext();
+}
