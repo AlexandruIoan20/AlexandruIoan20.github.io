@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import CATEGORIES from './Helpers/CategoriesArray.js';
 import ItemList from "./ItemList";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 
 
@@ -46,8 +46,8 @@ const CategoryList = () => {
             {categories.map(category => { 
                 return ( 
                     <article key = { category.id }>
-                        <NavLink key = { categories.id } to = {`/categories/${category.name}`}>
-                             <Category category = { category }/> </NavLink>
+                        <NavLink key = { categories.id } to = {`/categories/${category.query}`}>
+                        <Category category = { category }/> </NavLink>
                     </article>
                 )
             })}
