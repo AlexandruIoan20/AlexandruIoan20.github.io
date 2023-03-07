@@ -14,24 +14,27 @@ import './styling/items.css';
 import { Routes, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import Item from "./components/Item";
+import CartItemsProvider from "./components/CartItemsProvider";
 
 const App = () => { 
   return ( 
-    <section className="app-container">
-      <NavBar /> 
-      <Routes>
-        <Route path="/" element = { <Home/>} />
-        <Route path="categories">
-          <Route index element = {<Categories /> } />
-          <Route path=":id" element = {<ItemList />} />
-          <Route path = ":id/*" element = { <Item/>} /> 
-        </Route>
-        <Route path="/contact" element = { <Contact />} /> 
-        <Route path="/about" element = { <About />} /> 
-        <Route path="/cart" element = { <Cart />}/>
-        <Route path="*" element = { <NotFound />} /> 
-      </Routes>
-    </section>
+    <CartItemsProvider>
+      <section className="app-container">
+        <NavBar /> 
+        <Routes>
+          <Route path="/" element = { <Home/>} />
+          <Route path="categories">
+            <Route index element = {<Categories /> } />
+            <Route path=":id" element = {<ItemList />} />
+            <Route path = ":id/*" element = { <Item/>} /> 
+          </Route>
+          <Route path="/contact" element = { <Contact />} /> 
+          <Route path="/about" element = { <About />} /> 
+          <Route path="/cart" element = { <Cart />}/>
+          <Route path="*" element = { <NotFound />} /> 
+        </Routes>
+      </section>
+    </CartItemsProvider>
   )
 };
 

@@ -50,7 +50,7 @@ const CategoryList = () => {
                     <article key = { category.id }>
                         <NavLink
                             key = { categories.id } to = {`/categories/${category.id}`}>
-                        <Category category = { category }/> </NavLink>
+                            <Category category = { category }/></NavLink>
                     </article>
                 )
             })}
