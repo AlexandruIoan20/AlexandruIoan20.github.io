@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router";
 import CartElement from "./CartElement";
+import { useCartItems, useCartUpdate } from "./CartItemsProvider";
 
-const Cart = () => { 
-    const elements = [
-        { 
-            name: "Phone", 
-            value: 3,
-            id: "phone"
-        },
-        { 
-            name: "T-shirt",
-            value: 2,
-            id: "tshirt "
-        }
-    ]
+const Cart = (props) => { 
+    const location = useLocation(); 
+    const item = location.state.item;
+
+    const inCartItems = useCartItems(); 
+    const updateCart = useCartUpdate();
     return (
         <section className="cart">
 {/*             {elements.map(element => { 

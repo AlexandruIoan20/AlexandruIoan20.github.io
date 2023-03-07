@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import CATEGORIES from './Helpers/CategoriesArray.js';
 import ItemList from "./ItemList";
-import { NavLink, Outlet, Routes, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
+import CartItemsProvider from "./CartItemsProvider";
 
 
 const unsplash = createApi({
@@ -42,19 +43,19 @@ const CategoryList = () => {
     }, []);
 
     return(
+        <CartItemsProvider>
         <section className="category-list">
             {categories.map(category => { 
                 return ( 
                     <article key = { category.id }>
-                        <NavLink key = { categories.id } to = {`/categories/${category.query}`}>
+                        <NavLink
+                            key = { categories.id } to = {`/categories/${category.id}`}>
                         <Category category = { category }/> </NavLink>
                     </article>
                 )
             })}
-                    <Routes>
-                         <Route path = "/categories/:id" element = { <ItemList />} />
-                    </Routes>
         </section>
+        </CartItemsProvider>
     )
 };
 

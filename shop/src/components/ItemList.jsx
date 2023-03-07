@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, NavLink, useNavigate } from "react-router-dom";
+import { useParams, NavLink, useLocation } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 import ITEMS from "./Helpers/items";
 
@@ -8,10 +8,11 @@ const unsplash = createApi({
   });
 
 const ItemList = () => { 
-    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
     const urlID = useParams();
     const [items, setItems] = useState([]);
-    const [selectedItem, setSelectedItem] = useState({});
+
     
     async function buildItemList () { 
         let list = {};

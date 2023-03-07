@@ -106,3 +106,12 @@
     outline-offset: -8px;
     border-radius: 10px;
 }
+
+.item button a { 
+    color: #2B2D42;
+    text-decoration: none;
+}
+
+.item button:hover a, .item button:focus a { 
+    color: white;
+}
