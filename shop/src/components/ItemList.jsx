@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Item from "./Item";
-import { useParams, Routes, Route } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
-import { NavLink } from "react-router-dom";
 import ITEMS from "./Helpers/items";
 
 const unsplash = createApi({
@@ -10,6 +8,7 @@ const unsplash = createApi({
   });
 
 const ItemList = () => { 
+    const navigate = useNavigate();
     const urlID = useParams();
     const [items, setItems] = useState([]);
     const [selectedItem, setSelectedItem] = useState({});
@@ -52,16 +51,16 @@ const ItemList = () => {
             <p className="item-list-title">We found {`${items.length}`} items.</p>
             {items.map(item => { 
                 return ( 
-                    <NavLink key = { item.id } to = {`/categories/${urlID.id}/${item.name}`}>
-                        <article onClick = { () => setSelectedItem(item)}>
+                    <NavLink key = { item.id } to = {`/categories/${urlID.id}/${item.name}`}
+                        state={{ item: item }}>
+                        <article>
                             <img src={ item.url } alt="loading..." />
+                            <p> { item.name }</p>
+                            <p> { `${item.price}$` }</p>
                         </article>
                     </NavLink>
                 )
             })} 
-            <Routes>
-                <Route path = "/categories/:id/*" element = { <Item item =  { "Hy"} />} /> 
-            </Routes>
         </section> )
 
     

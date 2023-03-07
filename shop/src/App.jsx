@@ -20,10 +20,11 @@ const App = () => {
       <NavBar /> 
       <Routes>
         <Route path="/" element = { <Home/>} />
-        <Route path="/categories" element = {<Categories />} />
-        <Route path="/categories/:id" element = {<ItemList />} />
-        <Route path = "/categories/:id/*" element = { <Item />} /> 
-
+        <Route path="categories">
+          <Route index element = {<Categories /> } />
+          <Route path=":id" element = {<ItemList />} />
+          <Route path = ":id/*" element = { <Item/>} /> 
+        </Route>
         <Route path="/contact" element = { <Contact />} /> 
         <Route path="/about" element = { <About />} /> 
         <Route path="/cart" element = { <Cart />}/>
