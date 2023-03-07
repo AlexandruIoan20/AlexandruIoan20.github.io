@@ -10,6 +10,7 @@ import './styling/nav.css';
 import './styling/main.css';
 import './styling/intro.css';
 import './styling/categories.css';
+import './styling/items.css';
 import { Routes, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import Item from "./components/Item";

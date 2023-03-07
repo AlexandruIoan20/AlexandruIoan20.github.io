@@ -9,12 +9,14 @@ const Item = (props) => {
 
     const item = location.state.item;
     return ( 
-        <figure className="item">
-            <img src= {item.url} alt="loading" />
-            <h2 role="h2"> { item.name } </h2>
-            <button> Add to cart </button>
-            <p role="p"> { `${item.price}$`  }</p>
-        </figure>
+        <section className="item-holder">
+            <figure className="item">
+                <img src= {item.url} width = "300px" height = "450px" alt="loading" />
+                <h2 role="h2"> { item.name } </h2>
+                <button> Add to cart </button>
+                <p role="p"> { `${item.price}$`  }</p>
+            </figure>
+        </section>
     )
 };
 

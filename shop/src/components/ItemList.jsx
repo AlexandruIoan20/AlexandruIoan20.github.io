@@ -47,20 +47,22 @@ const ItemList = () => {
      }, [])
 
     return ( 
-        <section className="item-list">
+        <section className="items-informations">
             <p className="item-list-title">We found {`${items.length}`} items.</p>
-            {items.map(item => { 
-                return ( 
-                    <NavLink key = { item.id } to = {`/categories/${urlID.id}/${item.name}`}
-                        state={{ item: item }}>
-                        <article>
-                            <img src={ item.url } alt="loading..." />
-                            <p> { item.name }</p>
-                            <p> { `${item.price}$` }</p>
-                        </article>
-                    </NavLink>
-                )
-            })} 
+            <div className="items-list">
+                {items.map(item => { 
+                    return ( 
+                        <NavLink key = { item.id }  to = {`/categories/${urlID.id}/${item.name}`}
+                            state={{ item: item }}>
+                            <article className="item-in-list">
+                                <img src={ item.url } width = "200px" height = "250px" alt="loading..." />
+                                <p className="item-name"> { item.name }</p>
+                                <p> { `${item.price}$` }</p>
+                            </article>
+                        </NavLink>
+                    )
+                })} 
+            </div>
         </section> )
 
     
