@@ -11,7 +11,8 @@ import './styling/main.css';
 import './styling/intro.css';
 import './styling/categories.css';
 import { Routes, Route } from "react-router-dom";
-import ItemListRoutes from "./components/ItemListRoutes";
+import ItemList from "./components/ItemList";
+import Item from "./components/Item";
 
 const App = () => { 
   return ( 
@@ -20,13 +21,13 @@ const App = () => {
       <Routes>
         <Route path="/" element = { <Home/>} />
         <Route path="/categories" element = {<Categories />} />
-
-        <Route path = "/categories/*" element = { <ItemListRoutes />} /> 
+        <Route path="/categories/:id" element = {<ItemList />} />
+        <Route path = "/categories/:id/*" element = { <Item />} /> 
 
         <Route path="/contact" element = { <Contact />} /> 
         <Route path="/about" element = { <About />} /> 
         <Route path="/cart" element = { <Cart />}/>
-        <Route path="/*" element = { <NotFound />} /> 
+        <Route path="*" element = { <NotFound />} /> 
       </Routes>
     </section>
   )

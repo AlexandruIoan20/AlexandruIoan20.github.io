@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import CATEGORIES from './Helpers/CategoriesArray.js';
 import ItemList from "./ItemList";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Routes, Route } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 
 
@@ -51,6 +51,9 @@ const CategoryList = () => {
                     </article>
                 )
             })}
+                    <Routes>
+                         <Route path = "/categories/:id" element = { <ItemList />} />
+                    </Routes>
         </section>
     )
 };

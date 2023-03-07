@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-import { useParams, Routes, Route, Outlet, useOutletContext } from "react-router-dom";
+import { useParams, Routes, Route } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 import { NavLink } from "react-router-dom";
 import ITEMS from "./Helpers/items";
-
 
 const unsplash = createApi({
     accessKey: 'znEgxfmnj804269_4rFVRaNx48Y_aCjmL9xzsh133Cw'
@@ -13,6 +12,7 @@ const unsplash = createApi({
 const ItemList = () => { 
     const urlID = useParams();
     const [items, setItems] = useState([]);
+    const [selectedItem, setSelectedItem] = useState({});
     
     async function buildItemList () { 
         let list = {};
@@ -22,6 +22,7 @@ const ItemList = () => {
                 list = ITEMS[i].list
             }
         }
+
         let fetchedElements = [];
         await unsplash.search.getPhotos({ 
             query: urlID.id,
@@ -51,20 +52,19 @@ const ItemList = () => {
             <p className="item-list-title">We found {`${items.length}`} items.</p>
             {items.map(item => { 
                 return ( 
-                    <NavLink key = { item.id} to = {`/categories/${urlID.id}/${item.id}`}>
-                        <article>
+                    <NavLink key = { item.id } to = {`/categories/${urlID.id}/${item.name}`}>
+                        <article onClick = { () => setSelectedItem(item)}>
                             <img src={ item.url } alt="loading..." />
                         </article>
                     </NavLink>
                 )
             })} 
+            <Routes>
+                <Route path = "/categories/:id/*" element = { <Item item =  { "Hy"} />} /> 
+            </Routes>
         </section> )
 
     
 };
 
 export default ItemList;
-
-export function useItem(){ 
-    useOutletContext();
-}

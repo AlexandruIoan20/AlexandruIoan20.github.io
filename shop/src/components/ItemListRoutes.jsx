@@ -3,11 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import ItemList from "./ItemList";
 import Item from "./Item";
 
-const ItemListRoutes = () => { 
+const ItemListRoutes = (props) => { 
+    const { sold } = props;
     return ( 
         <Routes>
-            <Route path = ":id" element = { <ItemList />} /> 
-            <Route path = ":id/:el" element =  { <Item />} />  
+            <Route path = ":el" element = { <Item sold = {sold}/>} />  
         </Routes>
     )
 };
