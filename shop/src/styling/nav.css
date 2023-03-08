@@ -12,6 +12,8 @@ body {
     padding-inline: 1rem;
 
     background-color: #2B2D42;
+    position: sticky; 
+    top: 0;
 }
 
 .navbar ul { 

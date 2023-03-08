@@ -1,0 +1,85 @@
+.cart-element { 
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #edf2f4;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    border: 5px solid #2b2d42;
+    border-radius: 10px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.cart-element img { 
+    margin-left: 1rem;
+    border: 6px solid #8d99ae;
+    border-radius: 10px;
+
+    outline: 2px solid #ef233c;
+    outline-offset: 2px;
+}
+
+/* input */
+
+.price-q-informator p { 
+    text-align: center;
+}
+
+.price-q-informator input { 
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+
+    border: none;
+    padding: .4rem;
+    border-radius: 10px;
+}
+
+.cart-button  { 
+    border:none;
+    background-color: #edf2f4;
+    margin-inline: .5rem;
+    font-weight: 900;
+
+    padding: 1rem;
+}
+
+.cart-button:hover { 
+    background-color: #8d99ae;
+    color: white;
+
+    border-radius: 50%;
+}
+
+/* Total Informations */
+.total-price-display { 
+    display: flex;
+
+    background-color: #2b2d42;
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    font-size: 1.2rem;
+    bottom: 0;
+    width: 100vw;
+
+}
+
+.place-order-button { 
+    margin-left: auto;
+    margin-right: 3rem;
+
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+
+    text-decoration: underline double;
+    background-color:#edf2f4;
+
+    font-weight: 550;
+
+}

@@ -73,7 +73,7 @@ const ITEMS = [
         price: 200,
       },
       {
-        name: 'Surprinse Products',
+        name: 'Surprise Products',
         price: 30,
       },
       {
