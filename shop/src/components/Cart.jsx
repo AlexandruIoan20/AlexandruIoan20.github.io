@@ -3,6 +3,13 @@ import { useLocation } from "react-router";
 import CartElement from "./CartElement";
 import { useCartItems } from "./CartItemsProvider";
 
+/* 
+@@@@@@@@@@@@@@@@@@@@@@@@@
+Problema este ca nu mereu cand apesi add cart merge in pagin cu cartul 
+-Daca apesi de doua ori produsul intra in vector de doua ori 
+@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
 const Cart = (props) => {
     const location = useLocation();
     let item;
