@@ -1,15 +1,14 @@
 import React from "react";
 import { useLocation, NavLink  } from "react-router-dom";
-import { useCartItems, useCartUpdate } from "./CartItemsProvider";
+import { useCartUpdate, useCartItems } from "./CartItemsProvider";
 
 const Item = (props) => { 
     const location = useLocation();
+    const updateCart = useCartUpdate();
+    const itemsInCart = useCartItems();
 
     console.log(props, "props");
     console.log(location, "location");
-
-    const inCartItems = useCartItems(); 
-    const updateCart = useCartUpdate();
 
     const item = location.state.item;
     return ( 
@@ -17,7 +16,7 @@ const Item = (props) => {
             <figure className="item">
                 <img src= {item.url} width = "300px" height = "450px" alt="loading" />
                 <h2 role="h2"> { item.name } </h2>
-                <button>
+                <button onClick = { () => { updateCart(item); console.log(itemsInCart)}}>
                         <NavLink
                             state = { { item: item }}
                             to = "/cart"> Add to cart </NavLink></button>

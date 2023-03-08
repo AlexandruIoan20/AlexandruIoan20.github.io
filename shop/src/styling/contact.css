@@ -1,0 +1,25 @@
+.contact-options{ 
+    background-color: #EDF2F4;
+}
+
+.contact-options ul  { 
+    height: 70dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 5rem;
+}
+
+.contact-options ul li { 
+    list-style-type: none;
+}
+
+.contact-options ul li img { 
+    margin: 1rem;
+    border: 8px solid #EF233C;
+
+    outline: 10px solid #2B2D42;
+    outline-offset: 5px;
+    border-radius: 50%;
+}

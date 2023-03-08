@@ -43,7 +43,6 @@ const CategoryList = () => {
     }, []);
 
     return(
-        <CartItemsProvider>
         <section className="category-list">
             {categories.map(category => { 
                 return ( 
@@ -55,7 +54,6 @@ const CategoryList = () => {
                 )
             })}
         </section>
-        </CartItemsProvider>
     )
 };
 
