@@ -16,7 +16,7 @@ const Item = (props) => {
             <figure className="item">
                 <img src= {item.url} width = "300px" height = "450px" alt="loading" />
                 <h2 role="h2"> { item.name } </h2>
-                <button onClick = { () => { updateCart(item); console.log(itemsInCart)}}>
+                <button onClick = { () => { updateCart(item);}}>
                         <NavLink
                             state = { { item: item }}
                             to = "/cart"> Add to cart </NavLink></button>

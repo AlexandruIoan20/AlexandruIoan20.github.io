@@ -32,6 +32,7 @@ const ItemList = () => {
                     name: list[i].name, 
                     price: list[i].price,
                     url: arr.response.results[i].urls.small_s3,
+                    quantity: 1,
                     id: arr.response.results[i].blur_hash,
                 }
             };
