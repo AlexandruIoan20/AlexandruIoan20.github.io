@@ -43,13 +43,8 @@ const Cart = () => {
     function handleIncreasingQ (item, value) { 
         let array = inCartItems; 
         array.map(element => { 
-            if(element == item) {
-                if(value > 20)
-                    element.quantity = 20;
-                else if(value <= 0)
-                    element.quantity = 1
-                else 
-                    element.quantity = value;
+            if(element == item) { 
+                element.quantity = value;
             }
 
             return element;
@@ -81,24 +76,22 @@ const Cart = () => {
     return (
         <section className="page component-page">
             <section className="cart">
-
                 
                 {inCartItems.length > 0 &&
-                 <>
-                    <section className="starter-section">
-                        <h1>Your cart</h1>
-                        <button className="go-shopping-button"
-                                onClick={ () => { setTimeout( () => { navigate ("/categories")}, 10) }}>Go shopping</button>
-                    </section>
-                    {inCartItems.map( item => { 
+                    <>
+                        <section className="starter-section">
+                            <h1>Your cart</h1>
+                            <button className="go-shopping-button"
+                                    onClick={ () => { setTimeout( () => { navigate ("/categories")}, 10) }}>Go shopping</button>
+                        </section>
+                        {inCartItems.map( item => { 
                         return <CartElement key = { item.id } 
                             item = {item}
                             onIncreasingQ = { handleIncreasingQ }
                             onInputButton = { handleInputButton }/> 
-                            
-                    })}
-                </>
-                }   
+                        })}
+                    </>
+                }
 
                 {inCartItems.length === 0 && 
                     <section className="information">

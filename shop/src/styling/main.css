@@ -18,6 +18,16 @@
     background-color: white;
 }
 
+.home-page  {
+  margin-top: 3rem; 
+  padding: 10rem;
+  border: 10px solid #2b2d42;
+
+  outline: 10px solid #ef233c;
+  outline-offset: 5px;
+  border-radius: 10px;
+}
+
 /* Not found */
 .not-found-page { 
   height: calc(100vh - 10vh);

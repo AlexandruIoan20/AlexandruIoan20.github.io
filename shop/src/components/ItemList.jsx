@@ -44,15 +44,13 @@ const ItemList = () => {
     }
 
     useEffect( () => { 
-        if(items.length === 0) { 
-            navigate("/*")
-         }
         buildItemList();
      }, [])
 
     return ( 
         <section className="items-informations">
             <p className="item-list-title">We found {`${items.length}`} items.</p>
+            {items.length == 0 && <button className="start-button continue-button" onClick={ () => {navigate("/categories")}}>Continue Shopping</button>}
             <div className="items-list">
                 {items.map(item => { 
                     return ( 

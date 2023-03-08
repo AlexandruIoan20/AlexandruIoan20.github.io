@@ -9,24 +9,12 @@ const CartElement = (props) => {
             <article className="price-q-informator">
                 <p> { `${item.name}` }</p>  
                 <form> 
-                    <button className="cart-button" onClick={ (e) => 
-                        {
-                            e.preventDefault ();
-                            onInputButton("-", item)
-                        }
-                        }> - </button>
                     <input type="number" 
                         min= {1} 
                         max= {10}
                         step = '1' 
                         onChange = { (e) => { onIncreasingQ(item, e.target.value)}}
                         value = { item.quantity} />
-                    <button className="cart-button" onClick = { (e) => 
-                        {
-                            e.preventDefault();
-                            onInputButton("+", item)
-                        }
-                        }> + </button>
                 </form>
                 <p className="price"> {`${item.quantity} x ${item.price * item.quantity}$ / ${item.quantity} x ${item.price}$`} </p>
             </article>
