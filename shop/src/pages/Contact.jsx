@@ -7,13 +7,13 @@ const Contact = () => {
             <section className="contact-options">
                 <ul>
                     <li>
-                        <img src="https://picsum.photos/id/237/200/300" width= "350px" height= "350px" alt="..loading" />
+                        <a href="https://www.facebook.com/alex.mo.71697/" target= "_blank"><p>Facebook</p></a>
                     </li>
                     <li>
-                        <img src="https://picsum.photos/id/237/200/300" width= "350px" height= "350px" alt="...loading" />
+                        <a href="https://www.instagram.com/_alexioan/" target= "_blank"><p>Instagram</p></a>
                     </li>
                     <li>
-                        <img src="https://picsum.photos/id/237/200/300" width= "350px" height= "350px" alt="...loading" />
+                        <a href="https://discordapp.com/users/AlexIoan#0687" target= "_blank"><p>Discord</p></a>
                     </li>
                 </ul> 
             </section>

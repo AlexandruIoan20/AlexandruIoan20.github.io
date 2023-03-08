@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import CartElement from "./CartElement";
 import { useCartItems, useUpdateState } from "./CartItemsProvider";
+import { useNavigate } from "react-router";
 
 /* 
 @@@@@@@@@@@@@@@@@@@@@@@@@
@@ -12,6 +13,7 @@ Problema este ca nu mereu cand apesi add cart merge in pagin cu cartul
 
 const Cart = () => {
     /* Declarations */
+    const navigate = useNavigate();
     const [totalPrice, setTotalPrice] = useState(0);
 
     /* Location declarations */
@@ -41,8 +43,13 @@ const Cart = () => {
     function handleIncreasingQ (item, value) { 
         let array = inCartItems; 
         array.map(element => { 
-            if(element == item) { 
-                element.quantity = value;
+            if(element == item) {
+                if(value > 20)
+                    element.quantity = 20;
+                else if(value <= 0)
+                    element.quantity = 1
+                else 
+                    element.quantity = value;
             }
 
             return element;
@@ -74,13 +81,32 @@ const Cart = () => {
     return (
         <section className="page component-page">
             <section className="cart">
-                <h1>Your Cart</h1>
-                {inCartItems.map( item => { 
-                    return <CartElement key = { item.id } 
-                        item = {item}
-                        onIncreasingQ = { handleIncreasingQ }
-                        onInputButton = { handleInputButton }/> 
-                })}
+
+                
+                {inCartItems.length > 0 &&
+                 <>
+                    <section className="starter-section">
+                        <h1>Your cart</h1>
+                        <button className="go-shopping-button"
+                                onClick={ () => { setTimeout( () => { navigate ("/categories")}, 10) }}>Go shopping</button>
+                    </section>
+                    {inCartItems.map( item => { 
+                        return <CartElement key = { item.id } 
+                            item = {item}
+                            onIncreasingQ = { handleIncreasingQ }
+                            onInputButton = { handleInputButton }/> 
+                            
+                    })}
+                </>
+                }   
+
+                {inCartItems.length === 0 && 
+                    <section className="information">
+                        <h2>Your cart is empty</h2>
+                        <button className="go-shopping-button"
+                            onClick={ () => { setTimeout( () => { navigate ("/categories")}, 10) }}>Go shopping</button>
+                    </section>
+                }
 
                 <section className="total-price-display">
                     <p className="total-price-info"> { `Total: ${totalPrice}$` }</p>

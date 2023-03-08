@@ -15,11 +15,30 @@
     list-style-type: none;
 }
 
-.contact-options ul li img { 
+.contact-options ul li p { 
     margin: 1rem;
     border: 8px solid #EF233C;
+
+    width: 10rem;
+    height: 10rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 
     outline: 10px solid #2B2D42;
     outline-offset: 5px;
     border-radius: 50%;
+}
+
+.contact-options ul li p:hover, .contact-options ul li p:focus { 
+    font-weight: 900;
+    background-color: #ef233c;
+    color: white;
+}
+
+.contact-options ul li a { 
+    text-decoration: none;
+    color: #2B2D42;
 }

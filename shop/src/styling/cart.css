@@ -62,10 +62,11 @@
     background-color: #2b2d42;
     color: white;
     padding: 1rem;
-    position: sticky;
+    position: fixed;
     font-size: 1.2rem;
     bottom: 0;
     width: 100vw;
+    margin-top: 2rem;
 
 }
 
@@ -76,10 +77,61 @@
     border: none;
     padding: 1rem;
     border-radius: 10px;
-
-    text-decoration: underline double;
     background-color:#edf2f4;
 
     font-weight: 550;
+}
 
+.place-order-button:hover, .place-order-button:focus { 
+    background-color: #ef233c;
+    color: white;
+    font-weight: 900;
+    text-decoration:  underline ;
+    margin-right: 2.8rem;
+}
+
+.total-price-info { 
+    display: flex;
+    align-items: center;
+}
+
+.information { 
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #edf2f4;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.information h2  { 
+    display: flex; 
+    align-items: center;
+}
+
+.go-shopping-button { 
+    margin: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color:#2b2d42;
+    color: white;
+
+    font-weight: 550;
+}
+
+.go-shopping-button:hover, .go-shopping-button:focus { 
+    background-color: #ef233c;
+    color: white;
+    font-weight: 900;
+    text-decoration:  underline ;
+}
+
+
+.starter-section { 
+    background-color: #edf2f4;
+    margin: 1rem;
+
+    display: flex;
 }

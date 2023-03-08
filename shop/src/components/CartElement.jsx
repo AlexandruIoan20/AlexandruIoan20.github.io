@@ -17,6 +17,7 @@ const CartElement = (props) => {
                         }> - </button>
                     <input type="number" 
                         min= {1} 
+                        max= {10}
                         step = '1' 
                         onChange = { (e) => { onIncreasingQ(item, e.target.value)}}
                         value = { item.quantity} />
