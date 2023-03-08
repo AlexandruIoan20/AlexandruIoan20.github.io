@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import CartElement from "./CartElement";
 import { useCartItems, useUpdateState } from "./CartItemsProvider";
-import { useNavigate } from "react-router";
+import { useNavigate, NavLink } from "react-router-dom";
 
 /* 
 @@@@@@@@@@@@@@@@@@@@@@@@@
@@ -103,7 +103,7 @@ const Cart = () => {
 
                 <section className="total-price-display">
                     <p className="total-price-info"> { `Total: ${totalPrice}$` }</p>
-                    <button className="place-order-button"> Place Order </button>
+                    <NavLink state = { {items: { inCartItems }, price: totalPrice}} to = "/final"><button className="place-order-button"> Place Order </button></NavLink>
                 </section>
             </section>
         </section>

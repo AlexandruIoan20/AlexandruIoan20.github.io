@@ -14,10 +14,12 @@ import './styling/about.css';
 import './styling/categories.css';
 import './styling/items.css';
 import './styling/cart.css';
+import './styling/final.css';
 import { Routes, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import Item from "./components/Item";
 import CartItemsProvider from "./components/CartItemsProvider";
+import FinalList from "./components/FinalList";
 
 const App = () => { 
   return ( 
@@ -34,6 +36,7 @@ const App = () => {
           <Route path="/contact" element = { <Contact />} /> 
           <Route path="/about" element = { <About />} /> 
           <Route path="/cart" element = { <Cart />}/>
+          <Route path="/final" element = { <FinalList /> } /> 
           <Route path="*" element = { <NotFound />} /> 
         </Routes>
       </section>

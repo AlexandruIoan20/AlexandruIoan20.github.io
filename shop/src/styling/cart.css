@@ -67,8 +67,17 @@
     bottom: 0;
     width: 100vw;
     margin-top: 2rem;
-
+    
+    justify-content: center;
+    gap: 2rem;
 }
+
+.total-price-display a { 
+    text-decoration: none;
+    color: #2b2d42;
+    align-items: flex-end;
+}
+
 
 .place-order-button { 
     margin-left: auto;
@@ -135,3 +144,4 @@
 
     display: flex;
 }
+
