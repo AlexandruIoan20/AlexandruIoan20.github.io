@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import  { createApi } from 'unsplash-js';
 import ITEMS from "./Helpers/items";
+import { useNavigate } from "react-router-dom";
 
 const unsplash = createApi({
     accessKey: 'znEgxfmnj804269_4rFVRaNx48Y_aCjmL9xzsh133Cw'
   });
 
 const ItemList = () => { 
+    const navigate = useNavigate();
     const urlID = useParams();
     const [items, setItems] = useState([]);
     
@@ -42,6 +44,9 @@ const ItemList = () => {
     }
 
     useEffect( () => { 
+        if(items.length === 0) { 
+            navigate("/*")
+         }
         buildItemList();
      }, [])
 
