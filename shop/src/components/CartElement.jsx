@@ -1,7 +1,7 @@
 import React from "react";
 
 const CartElement = (props) => { 
-    const { item, onIncreasingQ, onInputButton } = props;
+    const { item, onIncreasingQ } = props;
     return (
         <section className="cart-element">
             <img src= { item.url } width = "100px" height="100px" alt="...loading" />
@@ -16,7 +16,7 @@ const CartElement = (props) => {
                         onChange = { (e) => { onIncreasingQ(item, e.target.value)}}
                         value = { item.quantity} />
                 </form>
-                <p className="price"> {`${item.quantity} x ${item.price * item.quantity}$ / ${item.quantity} x ${item.price}$`} </p>
+                <p className="price"> {`${item.quantity} x ${item.price * item.quantity}$ / 1 x ${item.price}$`} </p>
             </article>
         </section>
     )

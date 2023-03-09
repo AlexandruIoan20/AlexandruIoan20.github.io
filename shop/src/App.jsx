@@ -4,6 +4,7 @@ import Categories from "./pages/Categories"
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
+import CongratsPage from "./pages/CongratsPage";
 import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import './styling/nav.css';
@@ -13,6 +14,7 @@ import './styling/contact.css';
 import './styling/about.css';
 import './styling/categories.css';
 import './styling/items.css';
+import './styling/congrats.css'
 import './styling/cart.css';
 import './styling/final.css';
 import { Routes, Route } from "react-router-dom";
@@ -35,6 +37,7 @@ const App = () => {
           </Route>
           <Route path="/contact" element = { <Contact />} /> 
           <Route path="/about" element = { <About />} /> 
+          <Route path="/thanks" element =  { <CongratsPage /> } />
           <Route path="/cart" element = { <Cart />}/>
           <Route path="/final" element = { <FinalList /> } /> 
           <Route path="*" element = { <NotFound />} /> 

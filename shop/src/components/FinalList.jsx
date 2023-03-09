@@ -1,5 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router";
+import FinalItem from "./FinalItem";
+import { useLocation, NavLink } from "react-router-dom";
 
 const FinalList = () => { 
     const location = useLocation(); 
@@ -14,9 +15,14 @@ const FinalList = () => {
             <section className="items-final-holder">
                 {items.map(item => { 
                     return <article key = {item.id} className="item-final">
-                        <img src= {item.url} widht = "100px" height = "100px" alt="" />
+                        <FinalItem item = {item}/>
                     </article>
                 })}
+            
+            <section className="final-confirmation">
+                <p> {`Total: ${price}$` }</p>
+                <NavLink to = "/thanks"><button>Finalize Order</button></NavLink>
+            </section>
             </section>
         </section>
     )

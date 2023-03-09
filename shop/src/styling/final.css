@@ -1,0 +1,64 @@
+.final-element { 
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #edf2f4;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.items-final-holder { 
+    background-color: #edf2f4;
+    margin: 1rem;
+    border: 5px solid #2b2d42;
+    border-radius: 10px;
+}
+
+.items-final-holder img { 
+    border: 5px solid #ef233c;
+    border-radius: 10px;
+}
+
+.final-confirmation { 
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    padding: 1rem;
+
+    padding: 1rem;
+    border-top: 5px solid #2b2d42;
+    background-color: #8d99ae;
+}
+
+.final-confirmation p { 
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+}
+
+.final-confirmation button { 
+    border: none; 
+    border-radius: 10px;
+    padding: 1rem;
+
+    background-color: #2b2d42;
+    color: white;
+}
+
+.final-confirmation button:hover, .final-confirmation button:focus {  
+    background-color: #ef233c;
+    color: white;
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+.final .final-confirmation button a { 
+    color: white;
+}

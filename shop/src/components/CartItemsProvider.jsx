@@ -24,7 +24,7 @@ export default function CartItemsProvider ( { children }) {
 
         let toPush = true; 
         for(let i = 0; i < array.length; i++) { 
-            if(array[i] == item) 
+            if(array[i] === item) 
                 toPush = false;
         }
 
@@ -34,7 +34,13 @@ export default function CartItemsProvider ( { children }) {
     }
 
     function updateState (array) { 
-        setInCartItems(array);
+        let uniques = [];
+        array.forEach(element => { 
+            if(!uniques.includes(element)) { 
+                uniques.push(element)
+            }
+        })
+        setInCartItems(uniques);
     }
 
     return ( 

@@ -1,0 +1,21 @@
+.congrats-page  {
+    background-color: #edf2f4;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem; 
+    padding: 10rem;
+    border: 10px solid #2b2d42;
+  
+    outline: 10px solid #ef233c;
+    outline-offset: 5px;
+    border-radius: 10px;
+
+    width: 90vw;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.start-button { 
+    margin: auto;
+}
+  
