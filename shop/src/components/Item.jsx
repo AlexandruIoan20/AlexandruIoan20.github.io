@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, NavLink  } from "react-router-dom";
 import { useCartUpdate, useCartItems } from "./CartItemsProvider";
 
@@ -6,11 +6,11 @@ const Item = (props) => {
     const location = useLocation();
     const updateCart = useCartUpdate();
     const itemsInCart = useCartItems();
-
     console.log(props, "props");
     console.log(location, "location");
 
     const item = location.state.item;
+
     return ( 
         <section className="item-holder">
             <figure className="item">

@@ -85,10 +85,15 @@ const Cart = () => {
                                     onClick={ () => { setTimeout( () => { navigate ("/categories")}, 10) }}>Go shopping</button>
                         </section>
                         {inCartItems.map( item => { 
-                        return <CartElement key = { item.id } 
-                            item = {item}
-                            onIncreasingQ = { handleIncreasingQ }
-                            onInputButton = { handleInputButton }/> 
+                            let uniques = [];
+
+                            if(!uniques.includes(item)) {
+                                uniques.push(item);
+                                return <CartElement key = { item.id } 
+                                item = {item}
+                                onIncreasingQ = { handleIncreasingQ }
+                                onInputButton = { handleInputButton }/> 
+                            }
                         })}
                     </>
                 }
