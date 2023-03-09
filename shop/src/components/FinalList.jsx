@@ -24,6 +24,10 @@ const FinalList = () => {
                 <NavLink to = "/thanks"><button>Finalize Order</button></NavLink>
             </section>
             </section>
+
+            <footer>
+                <a href="https://github.com/AlexandruIoan20/Shopping-Cart" target={`_blank`}><p>Github: Alexandru Ioan</p></a>
+            </footer>
         </section>
     )
 };

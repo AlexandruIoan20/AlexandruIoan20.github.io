@@ -1,14 +1,11 @@
-.contact-options{ 
-    background-color: #EDF2F4;
-}
-
 .contact-options ul  { 
     height: 70dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-
     column-gap: 5rem;
+    margin: 1rem;
+    background-color: #edf2f4;
 }
 
 .contact-options ul li { 
