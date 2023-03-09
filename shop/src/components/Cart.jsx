@@ -103,7 +103,8 @@ const Cart = () => {
 
                 <section className="total-price-display">
                     <p className="total-price-info"> { `Total: ${totalPrice}$` }</p>
-                    <NavLink state = { {items: { inCartItems }, price: totalPrice}} to = "/final"><button className="place-order-button"> Place Order </button></NavLink>
+                    {inCartItems.length > 0 && <NavLink state = { {items: { inCartItems }, price: totalPrice}} to = "/final">
+                        <button className="place-order-button"> Place Order </button></NavLink> } 
                 </section>
             </section>
         </section>

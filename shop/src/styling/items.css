@@ -11,6 +11,10 @@
     padding: 1rem;
 }
 
+.item { 
+    cursor: pointer;
+}
+
 .items-list { 
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
